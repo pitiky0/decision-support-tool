@@ -1,0 +1,37 @@
+{% extends 'base.html' %}
+{% import "macros_wtf.html" as wtf %}
+
+{% block content %}
+  <div class="container mx-auto px-4 py-8">
+    <div class="w-full max-w-3xl mx-auto bg-white p-6 rounded-lg shadow">
+      <h3 class="text-2xl font-bold mb-4">Add Term</h3>
+      <hr class="mb-4">
+      {{ wtf.display_messages() }}
+      <form method="post" action="{{ url_for('dictionary.add_term') }}">
+          {{ form.hidden_tag() }}
+        <div class="mb-4">
+            {{ form.term.label(class="block text-gray-700 font-medium mb-2") }}
+            {% if term %}
+            {{ form.term(class="w-full border rounded-md py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline", value=term.term) }}
+            {% else %}
+            {{ form.term(class="w-full border rounded-md py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline") }}
+            {% endif %}
+            {% for error in form.term.errors %}
+              <span class="ml-1 text-red-500">{{ error }}</span>
+            {% endfor %}
+        </div>
+        <div class="mb-4">
+            {{ form.definition.label(class="block text-gray-700 font-medium mb-2") }}
+            {{ form.definition(rows="13", class="w-full border rounded-md py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline resize-none") }}
+            {% for error in form.definition.errors %}
+              <span class="ml-1 text-red-500">{{ error }}</span>
+            {% endfor %}
+        </div>
+        <div class="text-center">
+          <a href="{{ url_for('dictionary.index') }}" class="bg-gray-500 hover:bg-gray-700 text-white font-bold py-2 px-4 rounded">Cancel</a>
+            {{ form.submit(class="cursor-pointer bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded") }}
+        </div>
+      </form>
+    </div>
+  </div>
+{% endblock %}

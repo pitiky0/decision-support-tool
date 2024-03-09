@@ -1,0 +1,45 @@
+{% extends 'base.html' %}
+
+{% block content %}
+  <main class="container mx-auto py-8">
+    <div class="mb-8">
+      <h1 class="text-2xl font-bold text-center">Manage Your Engineering Change Procedures</h1>
+      <p class="text-center text-gray-600 mt-2">Simplify and streamline your ECPs with our user-friendly system.</p>
+    </div>
+    <div class="flex flex-wrap justify-center space-x-4 mb-8">
+      <a href="{{ url_for('main.requests') }}" class="btn btn-primary bg-blue-500 hover:bg-blue-700 focus:ring-2 focus:ring-blue-500 rounded-md px-4 py-2 text-center">
+        <i class="fas fa-file-pdf mr-2"></i> Submit PCR
+      </a>
+      <a href="{{ url_for('main.requests') }}" class="btn btn-primary bg-green-500 hover:bg-green-700 focus:ring-2 focus:ring-green-500 rounded-md px-4 py-2 text-center">
+        <i class="fas fa-paperclip mr-2"></i> Submit DFC
+      </a>
+      {% if sap_accessible %}
+      <a href="{{ url_for('main.sap') }}" class="btn btn-secondary bg-gray-400 hover:bg-gray-600 focus:ring-2 focus:ring-gray-500 rounded-md px-4 py-2 text-center">
+        <i class="fas fa-industry mr-2"></i> Access SAP Application
+      </a>
+      {% endif %}
+      <a href="{{ url_for('main.formation') }}" class="btn btn-success bg-green-400 hover:bg-green-600 focus:ring-2 focus:ring-green-500 rounded-md px-4 py-2 text-center">
+        <i class="fas fa-user-graduate mr-2"></i> Change Engineer Formation
+      </a>
+      <a href="{{ url_for('main.history') }}" class="btn btn-primary bg-yellow-500 hover:bg-yellow-700 focus:ring-2 focus:ring-yellow-500 rounded-md px-4 py-2 text-center">
+        <i class="fas fa-history mr-2"></i> Review History
+      </a>
+      <a href="{{ url_for('dictionary.index') }}" class="btn btn-primary bg-purple-500 hover:bg-purple-700 focus:ring-2 focus:ring-purple-500 rounded-md px-4 py-2 text-center">
+        <i class="fas fa-search mr-2"></i> Search in Dictionary
+      </a>
+    </div>
+    <div class="container ml-0">
+        <div class="w-full max-w-7xl bg-white p-6 rounded-lg shadow relative">
+            <h2 class="text-xl font-bold text-gray-800 mb-4">Latest Review History</h2>
+            <ul class="list-disc list-inside ml-4">
+                {% for history_item in latest_reviews %}
+                <li class="mb-2">
+                    <span class="font-bold">{{ history_item.date }}</span> - {{ history_item.action }}
+                </li>
+                {% endfor %}
+            </ul>
+            <a href="{{ url_for('main.history') }}" class="absolute bottom-0 right-0 mb-4 mr-6 text-blue-500 hover:text-blue-700">Show More >></a>
+        </div>
+    </div>
+  </main>
+{% endblock %}

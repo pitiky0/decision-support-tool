@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+{% import "macros_wtf.html" as wtf %}
+
+{% block content %}
+  <div class="container mx-auto px-4 py-8">
+    <div class="w-full max-w-3xl mx-auto bg-white p-6 rounded-lg shadow">
+      <h3 class="text-2xl font-bold mb-4">Edit Term</h3>
+      <hr class="mb-4">
+        {% if errors %}
+          <div class="bg-gray-100 p-2 rounded-md flex flex-col items-center justify-center">
+            {% for error in errors %}
+            <p class="text-red-500">{{ error }}</p>
+            {% endfor %}
+          </div>
+        {% endif %}
+        {{ wtf.display_messages() }}
+      <form method="post" action="{{ url_for('dictionary.edit_term', term_id=term.id) }}">
+        {{ form.hidden_tag() }}
+        <div class="mb-4">
+          <label for="term" class="block text-gray-700 font-medium mb-2">Term</label>
+          <input type="text" id="term" name="term" required class="w-full border rounded-md py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" value="{{ term.term }}">
+        </div>
+
+        <div class="mb-4">
+          <label for="definition" class="block text-gray-700 font-medium mb-2">Definition</label>
+          <textarea id="definition" name="definition" required rows="13" class="w-full border rounded-md py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline resize-y" >{{ term.definition }}</textarea>
+        </div>
+        <div class="text-center">
+            <a href="{{ url_for('dictionary.index') }}" class="bg-gray-500 hover:bg-gray-700 text-white font-bold py-2 px-4 rounded">Cancel</a>
+            <button type="submit" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">Submit</button>
+        </div>
+      </form>
+    </div>
+  </div>
+{% endblock %}

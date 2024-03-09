@@ -1,0 +1,94 @@
+2024-03-02 19:56:21,376 ERROR: Exception on /dictionary/edit-term/3 [POST] [in C:\Users\Ayoub\Desktop\microblog\OAD-CP\.venv\Lib\site-packages\flask\app.py:828]
+Traceback (most recent call last):
+  File "C:\Users\Ayoub\Desktop\microblog\OAD-CP\app\dictionary\routes.py", line 80, in edit_term
+    return redirect(url_for('dictionary.edit_term', term=term_to_edit, form=form))
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Ayoub\Desktop\microblog\OAD-CP\.venv\Lib\site-packages\flask\helpers.py", line 220, in url_for
+    return current_app.url_for(
+           ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Ayoub\Desktop\microblog\OAD-CP\.venv\Lib\site-packages\flask\app.py", line 1074, in url_for
+    return self.handle_url_build_error(error, endpoint, values)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Ayoub\Desktop\microblog\OAD-CP\.venv\Lib\site-packages\flask\app.py", line 1063, in url_for
+    rv = url_adapter.build(  # type: ignore[union-attr]
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Ayoub\Desktop\microblog\OAD-CP\.venv\Lib\site-packages\werkzeug\routing\map.py", line 919, in build
+    raise BuildError(endpoint, values, method, self)
+werkzeug.routing.exceptions.BuildError: Could not build url for endpoint 'dictionary.edit_term' with values ['form', 'term']. Did you forget to specify values ['term_id']?
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\Ayoub\Desktop\microblog\OAD-CP\.venv\Lib\site-packages\flask\app.py", line 1463, in wsgi_app
+    response = self.full_dispatch_request()
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Ayoub\Desktop\microblog\OAD-CP\.venv\Lib\site-packages\flask\app.py", line 872, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Ayoub\Desktop\microblog\OAD-CP\.venv\Lib\site-packages\flask\app.py", line 870, in full_dispatch_request
+    rv = self.dispatch_request()
+         ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Ayoub\Desktop\microblog\OAD-CP\.venv\Lib\site-packages\flask\app.py", line 855, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Ayoub\Desktop\microblog\OAD-CP\app\dictionary\routes.py", line 91, in edit_term
+    return redirect(url_for("dictionary.edit_term", term=term_to_edit, form=form))  # Redirect to the same edit page
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Ayoub\Desktop\microblog\OAD-CP\.venv\Lib\site-packages\flask\helpers.py", line 220, in url_for
+    return current_app.url_for(
+           ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Ayoub\Desktop\microblog\OAD-CP\.venv\Lib\site-packages\flask\app.py", line 1074, in url_for
+    return self.handle_url_build_error(error, endpoint, values)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Ayoub\Desktop\microblog\OAD-CP\.venv\Lib\site-packages\flask\app.py", line 1063, in url_for
+    rv = url_adapter.build(  # type: ignore[union-attr]
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Ayoub\Desktop\microblog\OAD-CP\.venv\Lib\site-packages\werkzeug\routing\map.py", line 919, in build
+    raise BuildError(endpoint, values, method, self)
+werkzeug.routing.exceptions.BuildError: Could not build url for endpoint 'dictionary.edit_term' with values ['form', 'term']. Did you forget to specify values ['term_id']?
+2024-03-02 19:57:54,269 INFO: Decision Support Tool startup [in C:\Users\Ayoub\Desktop\microblog\OAD-CP\app\__init__.py:85]
+2024-03-02 19:58:38,851 INFO: Decision Support Tool startup [in C:\Users\Ayoub\Desktop\microblog\OAD-CP\app\__init__.py:85]
+2024-03-02 20:00:20,195 INFO: Decision Support Tool startup [in C:\Users\Ayoub\Desktop\microblog\OAD-CP\app\__init__.py:85]
+2024-03-02 20:01:47,992 INFO: Decision Support Tool startup [in C:\Users\Ayoub\Desktop\microblog\OAD-CP\app\__init__.py:85]
+2024-03-03 12:49:11,290 INFO: Decision Support Tool startup [in C:\Users\Ayoub\Desktop\microblog\OAD-CP\app\__init__.py:85]
+2024-03-03 12:49:29,805 ERROR: Exception on /dictionary/add-term [GET] [in C:\Users\Ayoub\Desktop\microblog\OAD-CP\.venv\Lib\site-packages\flask\app.py:828]
+Traceback (most recent call last):
+  File "C:\Users\Ayoub\Desktop\microblog\OAD-CP\.venv\Lib\site-packages\flask\app.py", line 1463, in wsgi_app
+    response = self.full_dispatch_request()
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Ayoub\Desktop\microblog\OAD-CP\.venv\Lib\site-packages\flask\app.py", line 872, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Ayoub\Desktop\microblog\OAD-CP\.venv\Lib\site-packages\flask\app.py", line 870, in full_dispatch_request
+    rv = self.dispatch_request()
+         ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Ayoub\Desktop\microblog\OAD-CP\.venv\Lib\site-packages\flask\app.py", line 855, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Ayoub\Desktop\microblog\OAD-CP\app\dictionary\routes.py", line 61, in add_term
+    return render_template("dictionary/add_term.html", form=form)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Ayoub\Desktop\microblog\OAD-CP\.venv\Lib\site-packages\flask\templating.py", line 150, in render_template
+    return _render(app, template, context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Ayoub\Desktop\microblog\OAD-CP\.venv\Lib\site-packages\flask\templating.py", line 131, in _render
+    rv = template.render(context)
+         ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Ayoub\Desktop\microblog\OAD-CP\.venv\Lib\site-packages\jinja2\environment.py", line 1301, in render
+    self.environment.handle_exception()
+  File "C:\Users\Ayoub\Desktop\microblog\OAD-CP\.venv\Lib\site-packages\jinja2\environment.py", line 936, in handle_exception
+    raise rewrite_traceback_stack(source=source)
+  File "C:\Users\Ayoub\Desktop\microblog\OAD-CP\app\templates\dictionary\add_term.html", line 2, in top-level template code
+    {% import "macros_wtf.html" as wtf %}
+    ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Ayoub\Desktop\microblog\OAD-CP\app\templates\base.html", line 32, in top-level template code
+    {% block content %}
+  File "C:\Users\Ayoub\Desktop\microblog\OAD-CP\app\templates\dictionary\add_term.html", line 14, in block 'content'
+    {{ form.term(class="w-full border rounded-md py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline", value=existing_term.term) }}
+    ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Ayoub\Desktop\microblog\OAD-CP\.venv\Lib\site-packages\jinja2\environment.py", line 485, in getattr
+    return getattr(obj, attribute)
+           ^^^^^^^^^^^^^^^^^^^^^^^
+jinja2.exceptions.UndefinedError: 'existing_term' is undefined
+2024-03-03 13:08:03,922 INFO: Decision Support Tool startup [in C:\Users\Ayoub\Desktop\microblog\OAD-CP\app\__init__.py:85]
+2024-03-03 13:08:17,369 INFO: Decision Support Tool startup [in C:\Users\Ayoub\Desktop\microblog\OAD-CP\app\__init__.py:85]

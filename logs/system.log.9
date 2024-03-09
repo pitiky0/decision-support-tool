@@ -1,0 +1,103 @@
+2024-03-02 18:29:20,857 ERROR: Exception on /dictionary/index [POST] [in C:\Users\Ayoub\Desktop\microblog\OAD-CP\.venv\Lib\site-packages\flask\app.py:828]
+Traceback (most recent call last):
+  File "C:\Users\Ayoub\Desktop\microblog\OAD-CP\.venv\Lib\site-packages\flask\app.py", line 1463, in wsgi_app
+    response = self.full_dispatch_request()
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Ayoub\Desktop\microblog\OAD-CP\.venv\Lib\site-packages\flask\app.py", line 872, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Ayoub\Desktop\microblog\OAD-CP\.venv\Lib\site-packages\flask\app.py", line 870, in full_dispatch_request
+    rv = self.dispatch_request()
+         ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Ayoub\Desktop\microblog\OAD-CP\.venv\Lib\site-packages\flask\app.py", line 855, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Ayoub\Desktop\microblog\OAD-CP\app\dictionary\routes.py", line 15, in index
+    active_terms = Dictionary.search(term=term)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: Dictionary.search() missing 1 required positional argument: 'self'
+2024-03-02 18:31:05,950 INFO: Decision Support Tool startup [in C:\Users\Ayoub\Desktop\microblog\OAD-CP\app\__init__.py:85]
+2024-03-02 18:35:08,489 INFO: Decision Support Tool startup [in C:\Users\Ayoub\Desktop\microblog\OAD-CP\app\__init__.py:85]
+2024-03-02 18:35:28,638 INFO: Decision Support Tool startup [in C:\Users\Ayoub\Desktop\microblog\OAD-CP\app\__init__.py:85]
+2024-03-02 18:36:18,330 INFO: Decision Support Tool startup [in C:\Users\Ayoub\Desktop\microblog\OAD-CP\app\__init__.py:85]
+2024-03-02 18:39:12,029 INFO: Decision Support Tool startup [in C:\Users\Ayoub\Desktop\microblog\OAD-CP\app\__init__.py:85]
+2024-03-02 18:40:24,239 INFO: Decision Support Tool startup [in C:\Users\Ayoub\Desktop\microblog\OAD-CP\app\__init__.py:85]
+2024-03-02 18:46:48,440 INFO: Decision Support Tool startup [in C:\Users\Ayoub\Desktop\microblog\OAD-CP\app\__init__.py:85]
+2024-03-02 18:46:52,179 ERROR: Exception on /dictionary/add-term [GET] [in C:\Users\Ayoub\Desktop\microblog\OAD-CP\.venv\Lib\site-packages\flask\app.py:828]
+Traceback (most recent call last):
+  File "C:\Users\Ayoub\Desktop\microblog\OAD-CP\.venv\Lib\site-packages\flask\app.py", line 1463, in wsgi_app
+    response = self.full_dispatch_request()
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Ayoub\Desktop\microblog\OAD-CP\.venv\Lib\site-packages\flask\app.py", line 872, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Ayoub\Desktop\microblog\OAD-CP\.venv\Lib\site-packages\flask\app.py", line 870, in full_dispatch_request
+    rv = self.dispatch_request()
+         ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Ayoub\Desktop\microblog\OAD-CP\.venv\Lib\site-packages\flask\app.py", line 855, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Ayoub\Desktop\microblog\OAD-CP\app\dictionary\routes.py", line 61, in add_term
+    return render_template("dictionary/add_term.html")
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Ayoub\Desktop\microblog\OAD-CP\.venv\Lib\site-packages\flask\templating.py", line 150, in render_template
+    return _render(app, template, context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Ayoub\Desktop\microblog\OAD-CP\.venv\Lib\site-packages\flask\templating.py", line 131, in _render
+    rv = template.render(context)
+         ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Ayoub\Desktop\microblog\OAD-CP\.venv\Lib\site-packages\jinja2\environment.py", line 1301, in render
+    self.environment.handle_exception()
+  File "C:\Users\Ayoub\Desktop\microblog\OAD-CP\.venv\Lib\site-packages\jinja2\environment.py", line 936, in handle_exception
+    raise rewrite_traceback_stack(source=source)
+  File "C:\Users\Ayoub\Desktop\microblog\OAD-CP\app\templates\dictionary\add_term.html", line 2, in top-level template code
+    {% import "macros_wtf.html" as wtf %}
+    ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Ayoub\Desktop\microblog\OAD-CP\app\templates\base.html", line 32, in top-level template code
+    {% block content %}
+  File "C:\Users\Ayoub\Desktop\microblog\OAD-CP\app\templates\dictionary\add_term.html", line 19, in block 'content'
+    {{ form.term.label(class="block text-gray-700 font-medium mb-2") }}
+    ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Ayoub\Desktop\microblog\OAD-CP\.venv\Lib\site-packages\jinja2\environment.py", line 485, in getattr
+    return getattr(obj, attribute)
+           ^^^^^^^^^^^^^^^^^^^^^^^
+jinja2.exceptions.UndefinedError: 'form' is undefined
+2024-03-02 18:47:23,721 INFO: Decision Support Tool startup [in C:\Users\Ayoub\Desktop\microblog\OAD-CP\app\__init__.py:85]
+2024-03-02 18:49:38,993 INFO: Decision Support Tool startup [in C:\Users\Ayoub\Desktop\microblog\OAD-CP\app\__init__.py:85]
+2024-03-02 18:49:42,494 ERROR: Exception on /dictionary/add-term [GET] [in C:\Users\Ayoub\Desktop\microblog\OAD-CP\.venv\Lib\site-packages\flask\app.py:828]
+Traceback (most recent call last):
+  File "C:\Users\Ayoub\Desktop\microblog\OAD-CP\.venv\Lib\site-packages\flask\app.py", line 1463, in wsgi_app
+    response = self.full_dispatch_request()
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Ayoub\Desktop\microblog\OAD-CP\.venv\Lib\site-packages\flask\app.py", line 872, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Ayoub\Desktop\microblog\OAD-CP\.venv\Lib\site-packages\flask\app.py", line 870, in full_dispatch_request
+    rv = self.dispatch_request()
+         ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Ayoub\Desktop\microblog\OAD-CP\.venv\Lib\site-packages\flask\app.py", line 855, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Ayoub\Desktop\microblog\OAD-CP\app\dictionary\routes.py", line 61, in add_term
+    return render_template("dictionary/add_term.html", form=form)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Ayoub\Desktop\microblog\OAD-CP\.venv\Lib\site-packages\flask\templating.py", line 150, in render_template
+    return _render(app, template, context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Ayoub\Desktop\microblog\OAD-CP\.venv\Lib\site-packages\flask\templating.py", line 131, in _render
+    rv = template.render(context)
+         ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Ayoub\Desktop\microblog\OAD-CP\.venv\Lib\site-packages\jinja2\environment.py", line 1301, in render
+    self.environment.handle_exception()
+  File "C:\Users\Ayoub\Desktop\microblog\OAD-CP\.venv\Lib\site-packages\jinja2\environment.py", line 936, in handle_exception
+    raise rewrite_traceback_stack(source=source)
+  File "C:\Users\Ayoub\Desktop\microblog\OAD-CP\app\templates\dictionary\add_term.html", line 2, in top-level template code
+    {% import "macros_wtf.html" as wtf %}
+    ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Ayoub\Desktop\microblog\OAD-CP\app\templates\base.html", line 32, in top-level template code
+    {% block content %}
+  File "C:\Users\Ayoub\Desktop\microblog\OAD-CP\app\templates\dictionary\add_term.html", line 25, in block 'content'
+    {{ form.definition('rows="13", class="w-full border rounded-md py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline resize-none"') }}
+    ^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: Field.__call__() takes 1 positional argument but 2 were given
+2024-03-02 18:49:57,807 INFO: Decision Support Tool startup [in C:\Users\Ayoub\Desktop\microblog\OAD-CP\app\__init__.py:85]

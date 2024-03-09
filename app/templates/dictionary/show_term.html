@@ -1,0 +1,38 @@
+{% extends 'base.html' %}
+{% import "macros_wtf.html" as wtf %}
+
+{% block content %}
+  <div class="container mx-auto px-4 py-8">
+    <div class="flex items-center justify-between mb-8">
+      <h1 class="text-3xl font-bold text-center mb-4">Term Details</h1>
+      <div class="flex items-center space-x-2">
+        <a href="{{ url_for('dictionary.index') }}" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">Back</a>
+        {% if term %}
+          <a href="{{ url_for('dictionary.edit_term', term_id=term.id) }}" class="bg-yellow-500 hover:bg-yellow-700 text-white font-bold py-2 px-4 rounded">Edit</a>
+          <form id="delete_form" action="{{ url_for('dictionary.delete_term', term_id=term.id) }}" method="post">
+            <button type="submit" class="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded" onclick="return confirm('Are you sure you want to delete this term?');">Delete</button>
+          </form>
+        {% endif %}
+      </div>
+    </div>
+
+    {% if term %}
+      <div class="shadow overflow-hidden rounded-lg border border-gray-200 bg-white">
+        <div class="px-6 py-8">
+          <dl class="grid grid-cols-1 gap-y-4 sm:grid-cols-4">
+            <div class="sm:col-span-1">
+              <dt class="text-sm font-medium text-gray-700">Term</dt>
+              <dd class="mt-1 text-sm text-gray-900">{{ term.term }}</dd>
+            </div>
+            <div class="sm:col-span-3">
+              <dt class="text-sm font-medium text-gray-700">Definition</dt>
+              <dd class="mt-1 text-sm text-gray-900">{{ term.definition }}</dd>
+            </div>
+          </dl>
+        </div>
+      </div>
+    {% else %}
+      <p class="text-center text-gray-700 text-lg">Term not found!</p>
+    {% endif %}
+  </div>
+{% endblock %}

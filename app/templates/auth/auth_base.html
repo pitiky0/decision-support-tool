@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ECP Management System</title>
+  <title>{% block title %}{% endblock %}</title>
+  <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
+  <link rel="icon" type="image/x-icon" href="../../static/assets/logo.ico">
+</head>
+
+<body class="bg-gray-100">
+  <div class="container flex flex-col items-center justify-center mx-auto mt-8 mb-8">
+    <div class="w-full max-w-lg bg-white rounded-md shadow-md p-8">
+      <img src="../../static/assets/logo.png" alt="ECP Management System Logo" class="mx-auto mb-4 rounded-full" style="height: 150px; width: 150px;">
+      {% block content %}
+      {% endblock %}
+    </div>
+  </div>
+</body>
+
+</html>

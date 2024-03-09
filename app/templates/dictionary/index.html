@@ -1,0 +1,65 @@
+{% extends 'base.html' %}
+{% import "macros_wtf.html" as wtf %}
+
+{% block content %}
+  <div class="hero-section text-center flex items-center justify-center bg-gray-100 py-8">
+    <div class="container mx-auto max-w-2xl">
+      <h1 class="text-3xl font-bold text-gray-800 mb-4">Rechercher et gérer vos termes techniques</h1>
+      <p class="text-gray-600 mb-8">Trouvez facilement les définitions et ajoutez de nouveaux termes à votre base de connaissances.</p>
+    </div>
+  </div>
+
+ <div class="container mx-auto">
+    <div class="w-full max-w-4xl mx-auto bg-white p-6 rounded-lg shadow">
+        <form action="{{ url_for('dictionary.index') }}" method="post" class="flex items-center">
+            <label for="search" class="text-gray-700 mr-2">{{ form.search_label }}</label>
+            {{ form.search(
+                placeholder="Enter search term...",
+                class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+            ) }}
+
+            <button type="submit" class="bg-blue-500 flex items-center hover:bg-blue-700 text-white font-bold py-2 px-6 ml-2 rounded search-button">
+                Search
+                <i class="fa-solid fa-magnifying-glass ml-3 mt-1"></i>
+            </button>
+            {{ form.hidden_tag() }}
+        </form>
+
+    </div>
+</div>
+
+  <div class="container mx-auto px-4 py-8">
+    <div class="container pt-3 flex justify-center">
+      {{ wtf.display_messages() }}
+    </div>
+    <div class="text-right mb-4">
+        <a href="{{ url_for('dictionary.add_term') }}" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded inline-block"><i class="fa-solid fa-plus"></i> Add Term</a>
+    </div>
+    <table class="w-full border-collapse table-auto border border-gray-200 shadow mb-4">
+      <thead>
+        <tr class="bg-gray-200">
+          <th class="px-4 py-2 text-left">No</th>
+          <th class="px-4 py-2 text-left">Term</th>
+          <th class="px-4 py-2 text-left">Definition</th>
+          <th class="px-4 py-2 text-left">Action</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for term in terms %}
+          <tr>
+            <td class="px-4 py-2">{{ loop.index }}</td>
+            <td class="px-4 py-2 truncate overflow-hidden">{{ term.term }}</td>
+            <td class="px-4 py-2 truncate overflow-hidden max-w-lg">{{ term.definition }}</td>
+            <td class="px-4 py-2 flex items-center space-x-2">
+              <a href="{{ url_for('dictionary.show_term', term_id=term.id) }}" class="text-blue-500 hover:text-blue-700"><i class="fas fa-eye"></i></a>
+              <a href="{{ url_for('dictionary.edit_term', term_id=term.id) }}" class="text-yellow-500 hover:text-yellow-700"><i class="fas fa-pencil-alt"></i></a>
+              <form action="{{ url_for('dictionary.delete_term', term_id=term.id) }}" method="post" class="inline" onsubmit="return confirm('Are you sure you want to delete this term?')">
+                <button type="submit" class="text-red-500 hover:text-red-700"><i class="fas fa-trash-alt"></i></button>
+              </form>
+            </td>
+          </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  </div>
+{% endblock %}

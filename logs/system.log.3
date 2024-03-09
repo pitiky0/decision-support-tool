@@ -1,0 +1,111 @@
+2024-03-03 14:17:20,017 INFO: Decision Support Tool startup [in C:\Users\Ayoub\Desktop\microblog\OAD-CP\app\__init__.py:85]
+2024-03-03 14:27:30,560 INFO: Decision Support Tool startup [in C:\Users\Ayoub\Desktop\microblog\OAD-CP\app\__init__.py:85]
+2024-03-03 14:32:00,897 INFO: Decision Support Tool startup [in C:\Users\Ayoub\Desktop\microblog\OAD-CP\app\__init__.py:85]
+2024-03-03 14:33:37,939 INFO: Decision Support Tool startup [in C:\Users\Ayoub\Desktop\microblog\OAD-CP\app\__init__.py:85]
+2024-03-03 14:34:10,469 INFO: Decision Support Tool startup [in C:\Users\Ayoub\Desktop\microblog\OAD-CP\app\__init__.py:85]
+2024-03-03 14:35:34,891 INFO: Decision Support Tool startup [in C:\Users\Ayoub\Desktop\microblog\OAD-CP\app\__init__.py:85]
+2024-03-03 22:35:15,288 INFO: Decision Support Tool startup [in C:\Users\Ayoub\Desktop\microblog\OAD-CP\app\__init__.py:85]
+2024-03-03 22:36:39,089 ERROR: Exception on /index [GET] [in C:\Users\Ayoub\Desktop\microblog\OAD-CP\.venv\Lib\site-packages\flask\app.py:828]
+Traceback (most recent call last):
+  File "C:\Users\Ayoub\Desktop\microblog\OAD-CP\.venv\Lib\site-packages\flask\app.py", line 1463, in wsgi_app
+    response = self.full_dispatch_request()
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Ayoub\Desktop\microblog\OAD-CP\.venv\Lib\site-packages\flask\app.py", line 872, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Ayoub\Desktop\microblog\OAD-CP\.venv\Lib\site-packages\flask\app.py", line 870, in full_dispatch_request
+    rv = self.dispatch_request()
+         ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Ayoub\Desktop\microblog\OAD-CP\.venv\Lib\site-packages\flask\app.py", line 855, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Ayoub\Desktop\microblog\OAD-CP\.venv\Lib\site-packages\flask_login\utils.py", line 290, in decorated_view
+    return current_app.ensure_sync(func)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Ayoub\Desktop\microblog\OAD-CP\app\main\routes.py", line 11, in index
+    return render_template('main/index.html')
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Ayoub\Desktop\microblog\OAD-CP\.venv\Lib\site-packages\flask\templating.py", line 150, in render_template
+    return _render(app, template, context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Ayoub\Desktop\microblog\OAD-CP\.venv\Lib\site-packages\flask\templating.py", line 131, in _render
+    rv = template.render(context)
+         ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Ayoub\Desktop\microblog\OAD-CP\.venv\Lib\site-packages\jinja2\environment.py", line 1301, in render
+    self.environment.handle_exception()
+  File "C:\Users\Ayoub\Desktop\microblog\OAD-CP\.venv\Lib\site-packages\jinja2\environment.py", line 936, in handle_exception
+    raise rewrite_traceback_stack(source=source)
+  File "C:\Users\Ayoub\Desktop\microblog\OAD-CP\app\templates\main\index.html", line 1, in top-level template code
+    {% extends 'base.html' %}
+  File "C:\Users\Ayoub\Desktop\microblog\OAD-CP\app\templates\base.html", line 32, in top-level template code
+    {% block content %}
+  File "C:\Users\Ayoub\Desktop\microblog\OAD-CP\app\templates\main\index.html", line 21, in block 'content'
+    <a href="{{ url_for('main.change_engineer_formation') }}" class="btn btn-success bg-green-400 hover:bg-green-600 focus:ring-2 focus:ring-green-500 rounded-md px-4 py-2 text-center">
+    ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Ayoub\Desktop\microblog\OAD-CP\.venv\Lib\site-packages\flask\app.py", line 1074, in url_for
+    return self.handle_url_build_error(error, endpoint, values)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Ayoub\Desktop\microblog\OAD-CP\.venv\Lib\site-packages\flask\app.py", line 1063, in url_for
+    rv = url_adapter.build(  # type: ignore[union-attr]
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Ayoub\Desktop\microblog\OAD-CP\.venv\Lib\site-packages\werkzeug\routing\map.py", line 919, in build
+    raise BuildError(endpoint, values, method, self)
+werkzeug.routing.exceptions.BuildError: Could not build url for endpoint 'main.change_engineer_formation'. Did you mean 'main.formation' instead?
+2024-03-03 22:40:08,252 INFO: Decision Support Tool startup [in C:\Users\Ayoub\Desktop\microblog\OAD-CP\app\__init__.py:85]
+2024-03-03 22:40:43,380 INFO: Decision Support Tool startup [in C:\Users\Ayoub\Desktop\microblog\OAD-CP\app\__init__.py:85]
+2024-03-03 22:41:16,960 INFO: Decision Support Tool startup [in C:\Users\Ayoub\Desktop\microblog\OAD-CP\app\__init__.py:85]
+2024-03-03 23:44:51,504 INFO: Decision Support Tool startup [in C:\Users\Ayoub\Desktop\microblog\OAD-CP\app\__init__.py:85]
+2024-03-03 23:47:16,612 INFO: Decision Support Tool startup [in C:\Users\Ayoub\Desktop\microblog\OAD-CP\app\__init__.py:85]
+2024-03-09 00:31:11,486 INFO: Decision Support Tool startup [in C:\Users\Ayoub\Desktop\microblog\OAD-CP\app\__init__.py:85]
+2024-03-09 00:50:27,516 INFO: Decision Support Tool startup [in C:\Users\Ayoub\Desktop\microblog\OAD-CP\app\__init__.py:85]
+2024-03-09 01:02:23,173 INFO: Decision Support Tool startup [in C:\Users\Ayoub\Desktop\microblog\OAD-CP\app\__init__.py:85]
+2024-03-09 01:09:07,440 ERROR: Exception on /forgot-password [POST] [in C:\Users\Ayoub\Desktop\microblog\OAD-CP\.venv\Lib\site-packages\flask\app.py:828]
+Traceback (most recent call last):
+  File "C:\Users\Ayoub\Desktop\microblog\OAD-CP\.venv\Lib\site-packages\flask\app.py", line 1463, in wsgi_app
+    response = self.full_dispatch_request()
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Ayoub\Desktop\microblog\OAD-CP\.venv\Lib\site-packages\flask\app.py", line 872, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Ayoub\Desktop\microblog\OAD-CP\.venv\Lib\site-packages\flask\app.py", line 870, in full_dispatch_request
+    rv = self.dispatch_request()
+         ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Ayoub\Desktop\microblog\OAD-CP\.venv\Lib\site-packages\flask\app.py", line 855, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Ayoub\Desktop\microblog\OAD-CP\app\auth\routes.py", line 57, in forgot_password
+    send_password_reset_email(user)
+  File "C:\Users\Ayoub\Desktop\microblog\OAD-CP\app\auth\email.py", line 6, in send_password_reset_email
+    token = user.get_reset_password_token()
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'User' object has no attribute 'get_reset_password_token'
+2024-03-09 01:11:05,909 INFO: Decision Support Tool startup [in C:\Users\Ayoub\Desktop\microblog\OAD-CP\app\__init__.py:85]
+2024-03-09 01:11:11,159 ERROR: Exception on /forgot-password [POST] [in C:\Users\Ayoub\Desktop\microblog\OAD-CP\.venv\Lib\site-packages\flask\app.py:828]
+Traceback (most recent call last):
+  File "C:\Users\Ayoub\Desktop\microblog\OAD-CP\.venv\Lib\site-packages\flask\app.py", line 1463, in wsgi_app
+    response = self.full_dispatch_request()
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Ayoub\Desktop\microblog\OAD-CP\.venv\Lib\site-packages\flask\app.py", line 872, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Ayoub\Desktop\microblog\OAD-CP\.venv\Lib\site-packages\flask\app.py", line 870, in full_dispatch_request
+    rv = self.dispatch_request()
+         ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Ayoub\Desktop\microblog\OAD-CP\.venv\Lib\site-packages\flask\app.py", line 855, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Ayoub\Desktop\microblog\OAD-CP\app\auth\routes.py", line 57, in forgot_password
+    send_password_reset_email(user)
+  File "C:\Users\Ayoub\Desktop\microblog\OAD-CP\app\auth\email.py", line 6, in send_password_reset_email
+    token = user.get_reset_password_token()
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Ayoub\Desktop\microblog\OAD-CP\app\models.py", line 59, in get_reset_password_token
+    return jwt.encode({'reset_password': self.id, 'exp': time() + expires_in},
+           ^^^^^^^^^^
+AttributeError: module 'jwt' has no attribute 'encode'
+2024-03-09 01:14:46,971 INFO: Decision Support Tool startup [in C:\Users\Ayoub\Desktop\microblog\OAD-CP\app\__init__.py:85]
+2024-03-09 01:21:44,277 INFO: Decision Support Tool startup [in C:\Users\Ayoub\Desktop\microblog\OAD-CP\app\__init__.py:85]
+2024-03-09 01:28:42,139 INFO: Decision Support Tool startup [in C:\Users\Ayoub\Desktop\microblog\OAD-CP\app\__init__.py:85]
+2024-03-09 01:31:02,118 INFO: Decision Support Tool startup [in C:\Users\Ayoub\Desktop\microblog\OAD-CP\app\__init__.py:82]
+2024-03-09 01:31:22,971 INFO: Decision Support Tool startup [in C:\Users\Ayoub\Desktop\microblog\OAD-CP\app\__init__.py:82]
+2024-03-09 01:43:09,359 INFO: Decision Support Tool startup [in C:\Users\Ayoub\Desktop\microblog\OAD-CP\app\__init__.py:82]

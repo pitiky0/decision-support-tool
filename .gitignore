@@ -1,0 +1,30 @@
+# Fichiers et répertoires à ignorer pour un projet Flask
+
+# Fichiers système
+.DS_Store
+
+# Fichiers d'environnement
+.env
+.flaskenv
+
+# Fichiers de compilation
+*.pyc
+__pycache__/
+
+# Répertoires virtuels
+venv/
+.env/
+.vscode/
+
+# Migration folder
+migration/
+
+# Fichiers de log
+log/
+*.log
+
+# Base de données SQLite
+app.db
+
+# Fichiers de configuration
+instance/
