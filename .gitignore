@@ -10,6 +10,7 @@
 # Fichiers de compilation
 *.pyc
 __pycache__/
+.idea/
 
 # Répertoires virtuels
 venv/
